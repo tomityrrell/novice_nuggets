@@ -43,12 +43,12 @@ def main():
     log.setLevel('INFO')
     log.addHandler(LogCatcher())
 
-    data = {1: 2, 'a': 'b', 'content': 'abc' * int(1e4)}
+    data = {1: 2, 'a': 'b', 'content': 'abc' * 10_000}
 
     shrink_for_logging(data)
 
     # check 2: ensure dict has not changed
-    assert data == {1: 2, 'a': 'b', 'content': 'abc' * int(1e4)}, \
+    assert data == {1: 2, 'a': 'b', 'content': 'abc' * 10_000}, \
             'dictionary should not have changed but did'
 
 
