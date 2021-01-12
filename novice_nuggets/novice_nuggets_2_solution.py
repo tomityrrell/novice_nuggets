@@ -33,7 +33,7 @@ truncated_logger = logging.getLogger("truncated")
 default_handler = logging.StreamHandler()
 truncated_handler = logging.StreamHandler()
 
-# Create formatters
+# Create formatters, limit message to 100 characters
 truncated_formatter = logging.Formatter('%(message).100s... (too big to log)')
 
 # Add formatters to handlers
